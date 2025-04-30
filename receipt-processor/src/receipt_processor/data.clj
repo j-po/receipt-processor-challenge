@@ -5,6 +5,7 @@
     java.math.BigDecimal
     (java.time LocalDate LocalTime)))
 
+;; world's tiniest in-memory database
 (defonce receipts (atom {}))
 
 (def alphanumeric? (set "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"))
@@ -79,7 +80,7 @@
   (let [receipt-score (-> raw-receipt
                   process
                   score)
-        id (.toString (random-uuid))] ;; could dedupe here, if we don't trust UUIDs
+        id (.toString (random-uuid))]
   (swap! receipts assoc id receipt-score)
   id))
 

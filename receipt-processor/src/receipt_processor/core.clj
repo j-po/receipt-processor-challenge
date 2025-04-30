@@ -8,8 +8,6 @@
   (:import java.io.ByteArrayInputStream)
   (:gen-class))
 
-;;
-
 (defroutes all-routes
   (POST "/receipts/process"
         {body :body}
