@@ -1,7 +1,6 @@
 import json
 import os
 import urllib.request as req
-from uuid import uuid4
 
 def test_receipt(filename, points_expected, host="http://127.0.0.1", port=os.environ.get("LOCAL_PORT", default="8080")):
     print(f"Testing {filename}")
